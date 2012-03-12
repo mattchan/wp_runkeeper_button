@@ -25,21 +25,20 @@ License: GPLv2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
     Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-
-
-?>
-
-<?php
-
 add_filter('the_content', 'add_runkeeper_btn' );
 
 function add_runkeeper_btn($content) {
+	$output = "";
+	
     if (is_single()) {
-        return '<a href="http://runkeeper.com/share?healthyURL=' . get_permalink() . '"><img src="http://runkeeper.com/static/kronos/images/HealthyButton.png" class="healthyImage" alt="RunKeeper Healthy Button"></a><br /><br />' . $content;
-    } else {
-        return $content;
-    }
-}
+		$output .= "<a href=\"javascript:void(window.open('http://runkeeper.com/share?healthyUrl=";
+		$output .= get_permalink();
+		$output .= "', '' , 'width=630,height=350');\">";
+		$output .= "<img src=\"http://runkeeper.com/static/kronos/images/HealthyButton.png\" class=\"healthyImage\" alt=\"RunKeeper Healthy Button\" />";
+		$output .= "</a>";
+	}
 
+	return $output . $content;
+}
 
 ?>
