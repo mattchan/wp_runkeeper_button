@@ -28,17 +28,15 @@ License: GPLv2 - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 add_filter('the_content', 'add_runkeeper_btn' );
 
 function add_runkeeper_btn($content) {
-	$output = "";
-	
     if (is_single()) {
-		$output .= "<a href=\"javascript:void(window.open('http://runkeeper.com/share?healthyUrl=";
-		$output .= get_permalink();
-		$output .= "', '' , 'width=630,height=350');\">";
-		$output .= "<img src=\"http://runkeeper.com/static/kronos/images/HealthyButton.png\" class=\"healthyImage\" alt=\"RunKeeper Healthy Button\" />";
-		$output .= "</a>";
+		echo '<p><a href="javascript:void(window.open(\'http://runkeeper.com/share?healthyUrl=';
+		echo trim(get_permalink());
+		echo '\', \'\', \'width=630,height=350\'));">';
+		echo '<img src="http://runkeeper.com/static/kronos/images/HealthyButton.png" class="healthyImage" alt="RunKeeper Healthy Button" />';
+		echo '</a></p>';
 	}
-
-	return $output . $content;
+	
+	return $content;
 }
 
 ?>
