@@ -5,11 +5,11 @@ Requires at least: 3.2
 Tested up to: 3.3.1
 Stable tag: trunk
 
-Add a simple RunKeeper button to the top of your posts.
+Adds a RunKeeper Healthy button to the top of single posts.
 
 == Description ==
 
-Adds a RunKeeper Healthy button to prepended to the post content.
+Adds a RunKeeper Healthy button prepended to single post content. The Healthy button is loaded directly from RunKeeper.
 
 == Installation ==
 
